@@ -24,30 +24,28 @@ Blood Bank System is a web application designed to manage blood donation, storag
 - **Styling**: CSS (Bootstrap for UI components)
 
 ## Getting Started
-
-1. Clone the repository:
+> 1. Clone the repository:
 ```
    git clone https://github.com/your_username/blood-bank-system.git
 ```
-2. Setup And Installation   
-# Frontend
+> 2. Setup And Installation   
+>> Frontend
 ```
   cd blood-bank-system-frontend
   npm install
 ```
-
-# Backend
+>> Backend
 ```
   cd ../blood-bank-system-backend
   npm install
 ```
-3. Run The App
-# Frontend
+> 3. Run The App
+>> Frontend
 ```
 cd blood-bank-system-frontend
 npm start
 ```
-# Backend
+>> Backend
 ```
 cd ../blood-bank-system-backend
 npm start
