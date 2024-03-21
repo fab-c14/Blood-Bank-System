@@ -52,4 +52,9 @@ npm start
 ```
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests. **fab-c14**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
