@@ -1,6 +1,6 @@
 # Blood Bank System
 
-![Blood Bank System Logo](link_to_your_logo.png)
+![Blood Bank System Logo](https://tse1.mm.bing.net/th?id=OIP.suW8EqVsgK_cc48dmViLXQHaHa&pid=Api&P=0&h=220)
 
 ## Overview
 
@@ -50,3 +50,6 @@ npm start
 cd ../blood-bank-system-backend
 npm start
 ```
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
