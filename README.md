@@ -43,7 +43,7 @@ Blood Bank System is a web application designed to manage blood donation, storag
 ```
 > 1. Create a `.env` file in the `blood-bank-system-backend` directory.
 
-> Define the necessary environment variables in the `.env` file. These typically include variables such as MongoDB connection string, JWT secret, and any other configuration options your application requires.
+> 2. Define the necessary environment variables in the `.env` file. These typically include variables such as MongoDB connection string, JWT secret, and any other configuration options your application requires.
 ```
 
 > *4. Run The App*
