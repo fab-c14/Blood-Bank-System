@@ -1,6 +1,6 @@
 # Blood Bank System
 
-![Blood Bank System Logo](https://tse1.mm.bing.net/th?id=OIP.suW8EqVsgK_cc48dmViLXQHaHa&pid=Api&P=0&h=220)
+![Blood Bank System Logo](images/blood.png)
 
 ## Overview
 
