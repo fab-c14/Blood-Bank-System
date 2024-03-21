@@ -24,11 +24,11 @@ Blood Bank System is a web application designed to manage blood donation, storag
 - **Styling**: CSS (Bootstrap for UI components)
 
 ## Getting Started
-> 1. Clone the repository:
+> *1. Clone the repository:*
 ```
    git clone https://github.com/your_username/blood-bank-system.git
 ```
-> 2. Setup And Installation   
+> *2. Setup And Installation:*
 >> Frontend
 ```
   cd blood-bank-system-frontend
@@ -39,7 +39,14 @@ Blood Bank System is a web application designed to manage blood donation, storag
   cd ../blood-bank-system-backend
   npm install
 ```
-> 3. Run The App
+> *3. Setup Environment Variables:*
+```
+> 1. Create a `.env` file in the `blood-bank-system-backend` directory.
+
+> Define the necessary environment variables in the `.env` file. These typically include variables such as MongoDB connection string, JWT secret, and any other configuration options your application requires.
+```
+
+> *4. Run The App*
 >> Frontend
 ```
 cd blood-bank-system-frontend
