@@ -1,25 +1,15 @@
-
-import './App.css';
+// src/App.js
+import React from 'react';
+import RegisterForm from './components/Auth/RegisterForm';
+import LoginForm from './components/Auth/Login';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <RegisterForm />
+            <LoginForm />
+        </div>
+    );
 }
 
 export default App;
