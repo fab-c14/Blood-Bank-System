@@ -1,8 +1,9 @@
-// src/App.js
-import React, { useState } from 'react';
+
+import  { useState } from 'react';
 import RegisterForm from './components/Auth/RegisterForm';
 import LoginForm from './components/Auth/Login';
 
+import LandingPage from './components/Home/LandingPage';
 
 function App() {
     const [route,setRoute] = useState('home')
@@ -10,8 +11,10 @@ function App() {
     return (
         <div className="App">
          {
-          route==='home'?<RegisterForm/>:<LoginForm/>
+          route==='home'?<LandingPage/>:<LoginForm/>
          }
+
+
         </div>
     );
 }
