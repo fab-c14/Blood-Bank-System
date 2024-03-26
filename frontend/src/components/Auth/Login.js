@@ -21,8 +21,8 @@ const LoginForm = () => {
         <div className="container mt-5">
             <div className="row justify-content-center"> {/* Center the form */}
                 <div className="col-md-6 shadow-2 br4"> {/* Take up 6 grid columns on medium screens */}
-                    <h2 className='label label-default'>Donor Login</h2>
-                    <form onSubmit={handleSubmit}>
+                    <h2 className='text-center'>Donor Login</h2>
+                    <form onSubmit={handleSubmit} className='ma3'>
                         <div className="mb-3">
                             <label htmlFor="email" className="form-label">Email</label>
                             <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
@@ -31,8 +31,9 @@ const LoginForm = () => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
                         </div>
-                        <button type="submit" className="btn btn-primary">Login</button>
-                        <button type="button" className="btn btn-warning"> Hospital Login </button>
+                        <button type="submit" className="btn btn-primary btn-sm">Login</button> &nbsp;
+                        <button type="button" className="btn btn-warning btn-sm"> Hospital Login </button> &nbsp;
+                        <button type='button' className='btn btn-default btn-sm rounded b--gold'>Register</button>
                     </form>
                 </div>
             </div>

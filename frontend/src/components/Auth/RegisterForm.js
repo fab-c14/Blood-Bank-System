@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+ // Import CSS file for custom styling
 
 const RegisterForm = () => {
     // Define state variables for form fields
@@ -18,10 +18,10 @@ const RegisterForm = () => {
         <div className="container mt-5">
             <div className="row justify-content-center"> {/* Center the form */}
                 <div className="col-md-6 shadow-2 br4"> {/* Take up 6 grid columns on medium screens */}
-                <label className="label label-primary">Hello World</label>
-                    <form onSubmit={handleSubmit}>
+                    <h2 className='text-center'>Register</h2>
+                    <form onSubmit={handleSubmit}  className='ma3'>
                         <div className="mb-3">
-                            <label htmlFor="username" className="form-label text-center">Username</label>
+                            <label htmlFor="username" className="form-label ">Username</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -53,9 +53,10 @@ const RegisterForm = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary ml-1">Register</button>
-                        
-                        <button type="button" className="btn btn-info mr-2"> Hospital Login </button>
+                        <button type="submit" className="btn btn-primary btn-sm ">Register</button>&nbsp;
+                        <button type="button" className="btn btn-info btn-sm "> Hospital Register </button>&nbsp;
+                        <button type='button' className='btn btn-default btn-sm ' >Login</button>
+
                     </form>
                 </div>
             </div>
