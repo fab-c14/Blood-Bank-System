@@ -53,9 +53,9 @@ const RegisterForm = () => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-sm ">Register</button>&nbsp;
-                        <button type="button" className="btn btn-info btn-sm "> Hospital Register </button>&nbsp;
-                        <button type='button' className='btn btn-default btn-sm ' >Login</button>
+                        <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
+                        <button type="button" className="btn btn-info btn-sm b grow"> Hospital Register </button>&nbsp;
+                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' >Login</button>
 
                     </form>
                 </div>

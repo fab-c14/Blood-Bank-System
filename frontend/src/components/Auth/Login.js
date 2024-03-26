@@ -31,9 +31,9 @@ const LoginForm = () => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-sm">Login</button> &nbsp;
-                        <button type="button" className="btn btn-warning btn-sm"> Hospital Login </button> &nbsp;
-                        <button type='button' className='btn btn-default btn-sm rounded b--gold'>Register</button>
+                        <button type="submit" className="btn btn-primary btn-sm b grow">Login</button> &nbsp;
+                        <button type="button" className="btn btn-warning btn-sm b grow"> Hospital Login </button> &nbsp;
+                        <button type='button' className='btn btn-default btn-sm rounded b--gold b grow hover-bg-green'>Register</button>
                     </form>
                 </div>
             </div>
