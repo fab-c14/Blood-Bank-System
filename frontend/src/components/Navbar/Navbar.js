@@ -1,4 +1,5 @@
 import './Nav.css';
+
 import blooddonationlogo from './blooddonation.png';
 const Navbar = () => {
     return (
@@ -13,21 +14,16 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <a className="nav-link active" aria-current="page" href="/">Home</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">About</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Contact</a>
-                        </li>
+                    
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Login
+                                Donate
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Login as User</a></li>
-                                <li><a className="dropdown-item" href="#">Login as Hospital Employee</a></li>
+                                <li><a className="dropdown-item" href="/signin">Login</a></li>
+                                <li><a className="dropdown-item" href="/register">Sign Up</a></li>
                             </ul>
                         </li>
                     </ul>
