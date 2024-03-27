@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
-
+    const navigate = useNavigate();
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -16,6 +16,17 @@ const LoginForm = () => {
         // TODO: Implement form submission logic (send data to backend)
         console.log(formData);
     };
+    // handling the login click
+    const handleLoginClick = (e) =>{
+        e.preventDefault();
+        navigate('/register');
+    }
+
+    // handling hospital login
+    const handleHospitalLogin = (e) => {
+        e.preventDefault();
+        navigate('/signin');
+    }
 
     return (
         <div className="container mt-5">
@@ -32,8 +43,8 @@ const LoginForm = () => {
                             <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
                         </div>
                         <button type="submit" className="btn btn-primary btn-sm b grow">Login</button> &nbsp;
-                        <button type="button" className="btn btn-warning btn-sm b grow"> Hospital Login </button> &nbsp;
-                        <button type='button' className='btn btn-default btn-sm rounded b--gold b grow hover-bg-green'>Register</button>
+                        <button type="button" className="btn btn-warning btn-sm b grow" onClick={handleHospitalLogin}> Hospital Login </button> &nbsp;
+                        <button type='button' className='btn btn-default btn-sm rounded b--gold b grow hover-bg-green' onClick={handleLoginClick}>Register</button>
                     </form>
                 </div>
             </div>

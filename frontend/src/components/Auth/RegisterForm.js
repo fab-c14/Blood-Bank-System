@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
- // Import CSS file for custom styling
 
+import { useNavigate } from 'react-router-dom';
 const RegisterForm = () => {
     // Define state variables for form fields
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     // Handle form submission
     const handleSubmit = (event) => {
@@ -13,6 +14,18 @@ const RegisterForm = () => {
         // TODO: Implement form submission logic (e.g., send data to backend)
         console.log('Form submitted:', { username, email, password });
     };
+
+    // handle the login click
+    const handleLoginClick = (e) =>{
+        e.preventDefault();
+        navigate('/signin');
+
+    }
+    // handling hospital login
+    const handleHospitalLogin = (e) => {
+        e.preventDefault();
+        navigate('/register');
+    }
 
     return (
         <div className="container mt-5">
@@ -54,8 +67,8 @@ const RegisterForm = () => {
                             />
                         </div>
                         <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
-                        <button type="button" className="btn btn-info btn-sm b grow"> Hospital Register </button>&nbsp;
-                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' >Login</button>
+                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}> Hospital Register </button>&nbsp;
+                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' onClick={handleLoginClick} >Login</button>
 
                     </form>
                 </div>
