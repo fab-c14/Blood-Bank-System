@@ -11,7 +11,7 @@ const About = () => {
                         <p>We work tirelessly to connect blood donors with recipients and provide support to blood banks and hospitals across the country. With your help, we can continue to make a difference in the lives of countless individuals.</p>
                     </div>
                     <div className="col-md-6">
-                        {/* Add any additional content or images for the About Us section */}
+                       
                     </div>
                 </div>
             </div>
