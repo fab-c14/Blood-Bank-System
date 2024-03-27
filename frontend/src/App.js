@@ -18,6 +18,7 @@ const App = () => {
         <React.Fragment>
           <LandingPage />
           <FeaturesSection/>
+          <About />
           <Footer />
         </React.Fragment>} />
         <Route path="/signin" element={
