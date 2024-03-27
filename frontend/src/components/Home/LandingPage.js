@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import transfusion from './bloodtransfusion.png';
+
 const LandingPage = () => {
     const navigate = useNavigate();
+
     return (
         <div className="container my-5">
             <div className="row">
@@ -18,7 +20,7 @@ const LandingPage = () => {
                     <p>
                         Whether it's for emergency medical procedures, treating chronic illnesses, or supporting patients undergoing surgeries, donated blood plays a crucial role in healthcare.
                     </p>
-                    <button className="btn btn-primary mt-4" onClick={()=>navigate("/register")}>Sign Up To Donate</button>
+                    <button className="btn btn-primary mt-4" onClick={() => navigate("/register")}>Sign Up To Donate</button>
                 </div>
                 <div className="col-md-6">
                     <img src={transfusion} alt="Blood Bank" className="img-fluid rounded" />
