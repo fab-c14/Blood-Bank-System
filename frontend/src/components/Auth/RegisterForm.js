@@ -6,6 +6,7 @@ const RegisterForm = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [model,setModel] = useState(false);
     const navigate = useNavigate();
 
     // Handle form submission
@@ -25,6 +26,13 @@ const RegisterForm = () => {
     const handleHospitalLogin = (e) => {
         e.preventDefault();
         navigate('/register');
+    }
+
+    // handling model show
+
+    const handleModelShow = (e) => {
+        e.preventDefault();
+        showModel(true);
     }
 
     return (
@@ -68,7 +76,8 @@ const RegisterForm = () => {
                         </div>
                         <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
                         <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}> Hospital Register </button>&nbsp;
-                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' onClick={handleLoginClick} >Login</button>
+                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' onClick={handleLoginClick} >Login</button>&nbsp;
+                        <button type='button' className='btn btn-sm' onClick={handleModelShow}>Terms</button>
 
                     </form>
                 </div>
