@@ -1,48 +1,46 @@
 import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import UserAcceptance from '../../Pages/UserAcceptance/UserAcceptance';
 const RegisterForm = () => {
     // Define state variables for form fields
-    const [username, setUsername] = useState('');
+    const [username, setUsername]  = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [model,setModel] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
-    // Handle form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        // TODO: Implement form submission logic (e.g., send data to backend)
         console.log('Form submitted:', { username, email, password });
     };
 
-    // handle the login click
-    const handleLoginClick = (e) =>{
+    const handleLoginClick = (e) => {
         e.preventDefault();
         navigate('/signin');
+    };
 
-    }
-    // handling hospital login
     const handleHospitalLogin = (e) => {
         e.preventDefault();
         navigate('/register');
-    }
+    };
 
-    // handling model show
+    const handleModalShow = () => {
+        setShowModal(true);
+    };
 
-    const handleModelShow = (e) => {
-        e.preventDefault();
-        showModel(true);
-    }
+    const handleModalClose = () => {
+        setShowModal(false);
+    };
 
     return (
         <div className="container mt-5">
-            <div className="row justify-content-center"> {/* Center the form */}
-                <div className="col-md-6 shadow-2 br4"> {/* Take up 6 grid columns on medium screens */}
-                    <h2 className='text-center'>Register</h2>
-                    <form onSubmit={handleSubmit}  className='ma3'>
+            <div className="row justify-content-center">
+                <div className="col-md-6 shadow-2 br4">
+                    <h2 className="text-center">Register</h2>
+                    <form onSubmit={handleSubmit} className="ma3">
                         <div className="mb-3">
-                            <label htmlFor="username" className="form-label ">Username</label>
+                            <label htmlFor="username" className="form-label">Username</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -75,13 +73,13 @@ const RegisterForm = () => {
                             />
                         </div>
                         <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
-                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}> Hospital Register </button>&nbsp;
-                        <button type='button' className='btn btn-default btn-sm b b--light-red grow hover-bg-red' onClick={handleLoginClick} >Login</button>&nbsp;
-                        <button type='button' className='btn btn-sm' onClick={handleModelShow}>Terms</button>
-
+                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>Hospital Register</button>&nbsp;
+                        <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
+                        <button type="button" className="btn btn-sm" onClick={handleModalShow}>Terms</button>
                     </form>
                 </div>
             </div>
+            <UserAcceptance showModal={showModal} handleModalClose={handleModalClose} />
         </div>
     );
 };
