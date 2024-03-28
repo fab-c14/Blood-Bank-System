@@ -26,12 +26,12 @@ const Navbar = ({ isLoggedIn, onLogout }) => {
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Donate
+                                Profile
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {isLoggedIn ? (
                                     <React.Fragment>
-                                        <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
+                                        <li><Link className="dropdown-item" to="/profile">Your Info</Link></li>
                                         <li><Link className="dropdown-item" to="/donation">Donate</Link></li>
                                         <li><button className="dropdown-item" onClick={handleLogout}>Logout</button></li>
                                     </React.Fragment>
