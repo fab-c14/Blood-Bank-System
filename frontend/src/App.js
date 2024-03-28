@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React from 'react';
-import 'tachyons';
+import React,{ useState } from 'react';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import LandingPage from './components/Home/LandingPage';
 import FeaturesSection from './components/Home/FeatureSection';
@@ -12,9 +11,21 @@ import Profile from './Pages/Profile/Profile.js';
 import DonationForm from './Pages/DonationForm/DonationForm.js';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const handleLogin = () => {
+    // Implement your login logic here (e.g., set isLoggedIn to true)
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    // Implement your logout logic here (e.g., set isLoggedIn to false)
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Navbar isLoggedIn = {isLoggedIn} />
       <Routes>
         <Route
           path="/"
@@ -27,10 +38,28 @@ const App = () => {
             </React.Fragment>
           }
         />
-        <Route path="/signin" element={<LoginForm />} />
+        <Route path="/signin" element={<LoginForm onLogin={handleLogin} />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/donation" element={<DonationForm />} />
+        <Route
+          path="/profile"
+          element={
+            isLoggedIn ? (
+              <Profile />
+            ) : (
+              <Navigate to="/signin" />
+            )
+          }
+        />
+        <Route
+          path="/donation"
+          element={
+            isLoggedIn ? (
+              <DonationForm />
+            ) : (
+              <Navigate to="/signin" />
+            )
+          }
+        />
       </Routes>
     </Router>
   );
