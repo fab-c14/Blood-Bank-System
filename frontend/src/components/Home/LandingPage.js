@@ -5,7 +5,7 @@ const LandingPage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="container my-5">
+        <div className="container my-5" id="home">
             <div className="row">
                 <div className="col-md-6">
                     <h1 className="text-primary">Welcome to the Blood Bank System</h1>

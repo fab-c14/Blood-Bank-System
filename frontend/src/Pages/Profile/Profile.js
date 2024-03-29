@@ -8,7 +8,15 @@ const ProfilePage = () => {
     const user = {
         username: 'John Doe',
         email: 'john@example.com',
-        // Add more user information as needed
+        contact:1234567890,
+        country:'Algeria',
+        city:'Albama',
+        BloodInfo:{
+            type:'A',
+            age:19,
+            gender:'male',
+        }
+        
     };
 
    const handleDonate = (e)=>{
@@ -29,6 +37,9 @@ const ProfilePage = () => {
                             </div>
                             <div className="mb-3">
                                 <strong>Email: </strong> {user.email}
+                            </div>
+                            <div className="mb-3">
+                                <strong>Gender: </strong> {user.gender}
                             </div>
 
                             

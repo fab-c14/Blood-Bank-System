@@ -3,7 +3,7 @@ import aboutImage from './bloodtesttube.png';
 
 const About = () => {
     return (
-        <section className="py-5 bg-light">
+        <section className="py-5 bg-light" id="about">
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">

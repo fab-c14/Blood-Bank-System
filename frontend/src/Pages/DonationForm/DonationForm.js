@@ -5,7 +5,6 @@ const DonationForm = () => {
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('');
     const [bloodType, setBloodType] = useState('');
-    const [donationDate, setDonationDate] = useState('');
     const [addressLine1, setAddressLine1] = useState('');
     const [addressLine2, setAddressLine2] = useState('');
     const [city, setCity] = useState('');
@@ -20,7 +19,6 @@ const DonationForm = () => {
         console.log('Age:', age);
         console.log('Gender:', gender);
         console.log('Blood Type:', bloodType);
-        console.log('Donation Date:', donationDate);
         console.log('Address Line 1:', addressLine1);
         console.log('Address Line 2:', addressLine2);
         console.log('City:', city);

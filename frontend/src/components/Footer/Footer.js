@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-dark text-light py-4">
+        <footer className="bg-dark text-light py-4" id='contact'>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6">
@@ -14,9 +14,9 @@ const Footer = () => {
                     <div className="col-md-6">
                         <h5 className="text-primary">Quick Links</h5>
                         <ul className="list-unstyled">
-                            <li><a href="#" className="text-light">Home</a></li>
-                            <li><a href="#" className="text-light">About</a></li>
-                            <li><a href="#" className="text-light">Contact</a></li>
+                            <li><a href="#home" className="text-light">Home</a></li>
+                            <li><a href="#about" className="text-light">About</a></li>
+                            <li><a href="#about" className="text-light">Contact</a></li>
                         </ul>
                     </div>
                 </div>
