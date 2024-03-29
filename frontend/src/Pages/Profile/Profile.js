@@ -39,7 +39,7 @@ const ProfilePage = () => {
                                 <strong>Email: </strong> {user.email}
                             </div>
                             <div className="mb-3">
-                                <strong>Gender: </strong> {user.gender}
+                                <strong>Gender: </strong> {user.BloodInfo.gender}
                             </div>
 
                             
