@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import DonationForm from '../DonationForm/DonationForm.js';
-import { Navigate, useNavigate } from 'react-router-dom';
+import React from 'react';
+import {  useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
     

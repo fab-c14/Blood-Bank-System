@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import transfusion from './bloodtransfusion.png';
-
+import React from 'react';
 const LandingPage = () => {
     const navigate = useNavigate();
 
