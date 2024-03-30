@@ -57,6 +57,7 @@ const RegisterForm = ({ isLoggedIn}) => {
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6 shadow-2 br4">
+                <hr className=''/>
                     <h2 className="text-center">{isHospital ? 'Hospital Registration' : 'Register'}</h2>
                     <form onSubmit={handleSubmit} className="ma3">
                         <div className="mb-3">
@@ -92,15 +93,19 @@ const RegisterForm = ({ isLoggedIn}) => {
                                 required
                             />
                         </div>
+                        <hr className='purple'/>
+
                         <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
                         <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>{isHospital ? 'Donor Register' : 'Hospital Register'}</button>&nbsp;
                         {!isHospital && (
                             <>
-                                <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
+                                <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-washed-green" onClick={handleLoginClick}>Login</button>&nbsp;
                             </>
                         )}
-                        <button type="button" className="btn btn-sm" onClick={handleModalShow}>Terms</button>
+                        <button type="button" className="btn btn-sm link underline hover-orange hover-bg-washed-yellow" onClick={handleModalShow}>Terms</button>
+                   
                     </form>
+                    <hr className='purple'/>
                 </div>
             </div>
             {!isHospital && <UserAcceptance showModal={showModal} handleModalClose={handleModalClose} />}
