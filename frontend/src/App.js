@@ -38,8 +38,8 @@ const App = () => {
             </React.Fragment>
           }
         />
-        <Route path="/signin" element={<LoginForm onLogin={handleLogin} />} />
-        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/signin" element={<LoginForm onLogin={handleLogin} isLoggedIn={isLoggedIn}/>} />
+        <Route path="/register" element={<RegisterForm isLoggedIn={isLoggedIn}/>} />
         <Route
           path="/profile"
           element={

@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import UserAcceptance from '../../Pages/UserAcceptance/UserAcceptance';
-const RegisterForm = () => {
+const RegisterForm = ({isLoggedIn}) => {
     // Define state variables for form fields
     const [username, setUsername]  = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
-
+    if (isLoggedIn){
+        navigate('/profile')
+        return <>
+        <h1 className='text-center'>Whoops!  Already Logged In</h1>
+        </>;
+    };
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Form submitted:', { username, email, password });
@@ -19,6 +24,8 @@ const RegisterForm = () => {
         e.preventDefault();
         navigate('/signin');
     };
+
+    
 
     const handleHospitalLogin = (e) => {
         e.preventDefault();
@@ -32,8 +39,10 @@ const RegisterForm = () => {
     const handleModalClose = () => {
         setShowModal(false);
     };
+    
 
     return (
+        
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6 shadow-2 br4">

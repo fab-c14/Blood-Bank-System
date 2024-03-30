@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const LoginForm = () => {
+import ProfilePage from '../../Pages/Profile/Profile';
+const LoginForm = ({isLoggedIn}) => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
@@ -11,6 +11,16 @@ const LoginForm = () => {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
+
+
+      if (isLoggedIn){
+        navigate('/profile')
+        return <>
+        <ProfilePage/>
+        </>;
+    };
+
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
