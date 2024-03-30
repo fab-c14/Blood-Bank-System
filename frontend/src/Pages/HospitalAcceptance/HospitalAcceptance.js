@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HospitalRegistrationAgreement = ({ showModal, handleModalClose }) => {
+const HospitalAcceptance= ({ showModal, handleModalClose }) => {
     return (
         <div className={`modal ${showModal ? 'd-block' : 'd-none'}`} tabIndex="-1" role="dialog">
             <div className="modal-dialog" role="document">
@@ -33,4 +33,4 @@ const HospitalRegistrationAgreement = ({ showModal, handleModalClose }) => {
     );
 }
 
-export default HospitalRegistrationAgreement;
+export default HospitalAcceptance;
