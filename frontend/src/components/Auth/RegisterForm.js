@@ -22,7 +22,11 @@ const RegisterForm = ({ isLoggedIn}) => {
     // handle the hospital regs click
     const handleHospitalLogin = (e) => {
         e.preventDefault();
-        setIsHospital(true);
+        if(!isHospital){
+            setIsHospital(true);
+        }else{
+            setIsHospital(false);
+        }
     }
 
     const handleLoginClick = (e) => {
@@ -31,15 +35,23 @@ const RegisterForm = ({ isLoggedIn}) => {
     };
 
     const handleModalShow = () => {
-        setShowModal(true);
+       
         if (isHospital){
-
+            setShowModal1(true);
+            setShowModal(false);
         }
+        setShowModal(true);
     };
 
     const handleModalClose = () => {
         setShowModal(false);
+        setShowModal1(false);
     };
+    
+    // handle submit
+    const handleSubmit = (e)=>{
+        // keep it empty for now
+    }
 
     return (
         <div className="container mt-5">
@@ -80,8 +92,8 @@ const RegisterForm = ({ isLoggedIn}) => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-sm b grow">{isHospital ? 'Register' : 'Register'}</button>&nbsp;
-                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>{isHospital ? 'Hospital Login' : 'User Login'}</button>&nbsp;
+                        <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
+                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>{isHospital ? 'Donor Register' : 'Hospital Register'}</button>&nbsp;
                         {!isHospital && (
                             <>
                                 <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
@@ -92,6 +104,7 @@ const RegisterForm = ({ isLoggedIn}) => {
                 </div>
             </div>
             {!isHospital && <UserAcceptance showModal={showModal} handleModalClose={handleModalClose} />}
+            {isHospital && <HospitalAcceptance showModal={showModal1} handleModalClose={handleModalClose}/>}
         </div>
     );
 };
