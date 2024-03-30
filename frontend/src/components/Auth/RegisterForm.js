@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserAcceptance from '../../Pages/UserAcceptance/UserAcceptance';
 
-const RegisterForm = ({ isLoggedIn, isHospital }) => {
+const RegisterForm = ({ isLoggedIn}) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
+    const[isHospital,setIsHospital] = useState(false);
     
 
      useEffect(() => {
@@ -23,7 +24,7 @@ const RegisterForm = ({ isLoggedIn, isHospital }) => {
             // Handle hospital registration logic
             console.log('Hospital Registration');
             // After successful registration, redirect to hospital dashboard
-            navigate('/hospital/dashboard');
+            navigate('/profile')
         } else {
             // Handle user registration logic
             console.log('User Registration');
@@ -31,6 +32,11 @@ const RegisterForm = ({ isLoggedIn, isHospital }) => {
             navigate('/profile');
         }
     };
+    // handle the hospital regs click
+    const handleHospitalLogin = (e) => {
+        e.preventDefault();
+        setIsHospital(true);
+    }
 
     const handleLoginClick = (e) => {
         e.preventDefault();
@@ -52,7 +58,7 @@ const RegisterForm = ({ isLoggedIn, isHospital }) => {
                     <h2 className="text-center">{isHospital ? 'Hospital Registration' : 'Register'}</h2>
                     <form onSubmit={handleSubmit} className="ma3">
                         <div className="mb-3">
-                            <label htmlFor="username" className="form-label">Username</label>
+                            <label htmlFor="username" className="form-label">{isHospital ? 'Hospital Name' : 'Username'}</label>
                             <input
                                 type="text"
                                 className="form-control"
@@ -63,7 +69,7 @@ const RegisterForm = ({ isLoggedIn, isHospital }) => {
                             />
                         </div>
                         <div className="mb-3">
-                            <label htmlFor="email" className="form-label">Email</label>
+                            <label htmlFor="email" className="form-label">{isHospital ? 'Hospital Email' : 'Email'}</label>
                             <input
                                 type="email"
                                 className="form-control"
@@ -87,7 +93,7 @@ const RegisterForm = ({ isLoggedIn, isHospital }) => {
                         <button type="submit" className="btn btn-primary btn-sm b grow">{isHospital ? 'Register' : 'Register'}</button>&nbsp;
                         {!isHospital && (
                             <>
-                                <button type="button" className="btn btn-info btn-sm b grow" onClick={handleLoginClick}>Hospital Login</button>&nbsp;
+                                <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>Hospital Login</button>&nbsp;
                                 <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
                                 <button type="button" className="btn btn-sm" onClick={handleModalShow}>Terms</button>
                             </>
