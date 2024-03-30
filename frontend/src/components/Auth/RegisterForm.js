@@ -1,35 +1,40 @@
-import React, { useState,useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import UserAcceptance from '../../Pages/UserAcceptance/UserAcceptance';
-const RegisterForm = ({isLoggedIn}) => {
-    // Define state variables for form fields
-    const [username, setUsername]  = useState('');
+
+const RegisterForm = ({ isLoggedIn, isHospital }) => {
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
-    useEffect(() => {
+    
+
+     useEffect(() => {
         if (isLoggedIn) {
             navigate('/profile');
         }
     }, [isLoggedIn, navigate]);
-    
+
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Form submitted:', { username, email, password });
+        if (isHospital) {
+            // Handle hospital registration logic
+            console.log('Hospital Registration');
+            // After successful registration, redirect to hospital dashboard
+            navigate('/hospital/dashboard');
+        } else {
+            // Handle user registration logic
+            console.log('User Registration');
+            // After successful registration, redirect to user profile
+            navigate('/profile');
+        }
     };
 
     const handleLoginClick = (e) => {
         e.preventDefault();
         navigate('/signin');
-    };
-
-    
-
-    const handleHospitalLogin = (e) => {
-        e.preventDefault();
-        navigate('/register');
     };
 
     const handleModalShow = () => {
@@ -39,14 +44,12 @@ const RegisterForm = ({isLoggedIn}) => {
     const handleModalClose = () => {
         setShowModal(false);
     };
-    
 
     return (
-        
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6 shadow-2 br4">
-                    <h2 className="text-center">Register</h2>
+                    <h2 className="text-center">{isHospital ? 'Hospital Registration' : 'Register'}</h2>
                     <form onSubmit={handleSubmit} className="ma3">
                         <div className="mb-3">
                             <label htmlFor="username" className="form-label">Username</label>
@@ -81,14 +84,18 @@ const RegisterForm = ({isLoggedIn}) => {
                                 required
                             />
                         </div>
-                        <button type="submit" className="btn btn-primary btn-sm b grow">Register</button>&nbsp;
-                        <button type="button" className="btn btn-info btn-sm b grow" onClick={handleHospitalLogin}>Hospital Register</button>&nbsp;
-                        <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
-                        <button type="button" className="btn btn-sm" onClick={handleModalShow}>Terms</button>
+                        <button type="submit" className="btn btn-primary btn-sm b grow">{isHospital ? 'Register' : 'Register'}</button>&nbsp;
+                        {!isHospital && (
+                            <>
+                                <button type="button" className="btn btn-info btn-sm b grow" onClick={handleLoginClick}>Hospital Login</button>&nbsp;
+                                <button type="button" className="btn btn-default btn-sm b b--light-red grow hover-bg-red" onClick={handleLoginClick}>Login</button>&nbsp;
+                                <button type="button" className="btn btn-sm" onClick={handleModalShow}>Terms</button>
+                            </>
+                        )}
                     </form>
                 </div>
             </div>
-            <UserAcceptance showModal={showModal} handleModalClose={handleModalClose} />
+            {!isHospital && <UserAcceptance showModal={showModal} handleModalClose={handleModalClose} />}
         </div>
     );
 };
