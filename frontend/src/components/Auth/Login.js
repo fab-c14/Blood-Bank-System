@@ -38,6 +38,7 @@ const LoginForm = ({ isLoggedIn }) => {
         <div className="container mt-5">
             <div className="row justify-content-center">
                 <div className="col-md-6 shadow-2 br4">
+                <hr className=''/>
                     <h2 className="text-center">{isHospital ? 'Donor Login' : 'Hospital Login'}</h2>
                     <form onSubmit={handleSubmit} className="ma3">
                         <div className="mb-3">
@@ -48,12 +49,14 @@ const LoginForm = ({ isLoggedIn }) => {
                             <label htmlFor="password" className="form-label">Password</label>
                             <input type="password" className="form-control" id="password" name="password" value={formData.password} onChange={handleChange} required />
                         </div>
+                        <hr/>
                         <button type="submit" className="btn btn-primary btn-sm grow b">Login</button> &nbsp;
                         <button type="button" className="btn btn-warning btn-sm grow b" onClick={handleHospitalLogin}> {isHospital ? 'Donor Login' : 'Hospital Login'} </button> &nbsp;
                         {!isLoggedIn && (
                             <button type='button' className='btn btn-default btn-sm rounded b--green grow hover-bg-red b' onClick={() => navigate('/register')}>Register</button>
                         )}
                     </form>
+                    <hr/>
                 </div>
             </div>
         </div>
