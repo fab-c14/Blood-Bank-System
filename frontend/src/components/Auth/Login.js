@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProfilePage from '../../Pages/Profile/Profile';
 const LoginForm = ({isLoggedIn}) => {
@@ -13,13 +13,11 @@ const LoginForm = ({isLoggedIn}) => {
     };
 
 
-      if (isLoggedIn){
-        navigate('/profile')
-        return <>
-        <ProfilePage/>
-        </>;
-    };
-
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate('/profile');
+        }
+    }, [isLoggedIn, navigate]);
     
 
     const handleSubmit = (e) => {

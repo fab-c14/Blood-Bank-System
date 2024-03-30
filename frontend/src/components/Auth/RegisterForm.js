@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import UserAcceptance from '../../Pages/UserAcceptance/UserAcceptance';
@@ -9,12 +9,12 @@ const RegisterForm = ({isLoggedIn}) => {
     const [password, setPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
-    if (isLoggedIn){
-        navigate('/profile')
-        return <>
-        <h1 className='text-center'>Whoops!  Already Logged In</h1>
-        </>;
-    };
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate('/profile');
+        }
+    }, [isLoggedIn, navigate]);
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Form submitted:', { username, email, password });
