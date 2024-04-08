@@ -7,8 +7,8 @@ import About from './components/Home/About';
 import Footer from './components/Footer/Footer';
 import LoginForm from './components/Auth/Login';
 import RegisterForm from './components/Auth/RegisterForm';
-import Profile from './Pages/Profile/Profile.js';
-import DonationForm from './Pages/DonationForm/DonationForm.js';
+import Profile from './Pages/Profile/Profile';
+import DonationForm from './Pages/DonationForm/DonationForm';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
