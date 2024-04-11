@@ -26,7 +26,7 @@ Blood Bank System is a web application designed to manage blood donation, storag
 ## Getting Started
 > *1. Clone the repository:*
 ```
-   git clone https://github.com/your_username/blood-bank-system.git
+   git clone https://github.com/fab-c14/blood-bank-system.git
 ```
 > *2. Setup And Installation:*
 >> Frontend
